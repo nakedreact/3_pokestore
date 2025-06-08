@@ -2,7 +2,9 @@ import Stripe from "stripe";
 import "../../../envConfig.js";
 
 const API_KEY = process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY;
-const stripe = new Stripe(API_KEY, { apiVersion: "2025-05-28.basil" });
+const stripe = new Stripe(API_KEY, {
+  apiVersion: "2023-10-16",
+});
 
 export async function POST(request) {
   try {
@@ -15,8 +17,8 @@ export async function POST(request) {
       cancel_url: process.env.NEXT_PUBLIC_BASE_URL + "/",
     });
     return Response.json(session);
-  } catch (error) {
-    console.log("Error creating cart checkout", error.message);
-    return Response.json({ error: "Failed to create Stripe checkout page" });
+  } catch (err) {
+    console.error("Error creating cart checkout ", err.message);
+    return Response.json({ error: "Failed to create stripe checkout page" });
   }
 }

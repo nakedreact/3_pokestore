@@ -10,10 +10,11 @@ export default function Cart() {
     const sum = acc + parseInt(numProduct);
     return sum;
   }, 0);
+
   return (
     <div>
-      <Link href={"/cart"} className="unstyled-button">
-        <i className="fa-solid fa-cart-shopping"></i>
+      <Link className="unstyled-button" href={"/cart"}>
+        <i className="fa-solid fa-bag-shopping"></i>
         {numProducts > 0 && (
           <div className="cart-num">
             <p>{numProducts}</p>

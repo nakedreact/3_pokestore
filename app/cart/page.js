@@ -30,9 +30,7 @@ export default function CartPage() {
 
   async function createCheckout() {
     try {
-      const baseURL = process.env.VERCEL_URL
-        ? `https://${process.env.VERCEL_URL}`
-        : "http://localhost:3000";
+      const baseURL = process.env.NEXT_PUBLIC_BASE_URL;
       const lineItems = Object.keys(cart).map((item, itemIndex) => {
         return {
           price: item,
@@ -40,18 +38,13 @@ export default function CartPage() {
         };
       });
 
-      const response = await fetch("/api/checkout", {
+      const response = await fetch(baseURL + "/api/checkout", {
         method: "POST",
         headers: {
           "Content-type": "application/json",
         },
         body: JSON.stringify({ lineItems }),
       });
-      if (!response.ok) {
-        const text = await res.text();
-        console.error("Fetch failed:", text); // Print HTML response
-        throw new Error("Failed to fetch");
-      }
       const data = await response.json();
       if (response.ok) {
         console.log(data);
