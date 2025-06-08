@@ -110,7 +110,9 @@ export default function Products(props) {
                   />
                 </button>
                 <div className="sticker-info">
-                  <p className="text-medium">{stickerName}</p>
+                  <p className="text-medium">
+                    {stickerName.replace(" Sticker.png", "")}
+                  </p>
                   <p>{sticker.description}</p>
                   <h4>
                     <span>$</span>
