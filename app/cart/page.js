@@ -47,6 +47,11 @@ export default function CartPage() {
         },
         body: JSON.stringify({ lineItems }),
       });
+      if (!response.ok) {
+        const text = await res.text();
+        console.error("Fetch failed:", text); // Print HTML response
+        throw new Error("Failed to fetch");
+      }
       const data = await response.json();
       if (response.ok) {
         console.log(data);

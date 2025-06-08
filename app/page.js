@@ -7,6 +7,11 @@ export async function getProducts() {
     : "http://localhost:3000";
 
   const response = await fetch(`${baseURL}/api/products`);
+  if (!response.ok) {
+    const text = await res.text();
+    console.error("Fetch failed:", text); // Print HTML response
+    throw new Error("Failed to fetch");
+  }
   const products = await response.json();
   return products;
 }
