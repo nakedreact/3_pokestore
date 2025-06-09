@@ -43,7 +43,9 @@ export default function RootLayout({ children }) {
               <div>
                 <h3>Sebastian CV</h3>
                 <Link href={"/"}>PadelRanks</Link> <br />
-                <Link href={"/"}>Subscription Tracker</Link>
+                <Link href={"https://master.d2j2ok8ecrr8rg.amplifyapp.com/"}>
+                  Expenser
+                </Link>
               </div>
               <div>
                 <h3>Store</h3>
