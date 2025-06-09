@@ -60,7 +60,7 @@ export default function RootLayout({ children }) {
               <div className="socials"></div>
               <p>
                 ©{" "}
-                <a href="https://www.github.com/portfolio" target="_blank">
+                <a href="https://www.github.com/nakedreact" target="_blank">
                   {" "}
                   Sebastian CV
                 </a>
