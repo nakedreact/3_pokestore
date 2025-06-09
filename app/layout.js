@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
                   <h1>TechStore</h1>
                 </Link>
                 <h5 className="mid-text">
-                  - Everything pokemon fans could ever need -
+                  - Everything tech fans could ever need -
                 </h5>
                 <Cart />
               </div>
